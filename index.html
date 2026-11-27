@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow Agile Board</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>TaskFlow Agile Board</h1>
+  <p>Drag cards to change status • Week 6</p>
+</header>
+
+<div class="add-box">
+  <input type="text" id="newTaskInput" placeholder="New task likho... e.g. Fix Bug">
+  <button onclick="addTask()">+ Add Task</button>
+</div>
+
+<main class="board">
+  <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="removeHighlight(event)">
+    <h2>To Do <span id="count-todo">0</span></h2>
+    <div class="cards" id="todo-cards"></div>
+  </div>
+
+  <div class="column" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="removeHighlight(event)">
+    <h2>In Progress <span id="count-inprogress">0</span></h2>
+    <div class="cards" id="inprogress-cards"></div>
+  </div>
+
+  <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="removeHighlight(event)">
+    <h2>Done <span id="count-done">0</span></h2>
+    <div class="cards" id="done-cards"></div>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
